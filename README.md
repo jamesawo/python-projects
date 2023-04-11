@@ -10,9 +10,9 @@ Thank you for checking out my repository. If you have any questions or suggestio
 
 Read these articles to get a quick grab on Python:
 
-https://www.python.org/about/gettingstarted
-https://www.learnpython.org
-https://www.programiz.com/python-programming
+-   https://www.python.org/about/gettingstarted
+-   https://www.learnpython.org
+-   https://www.programiz.com/python-programming
 
 ## Author
 

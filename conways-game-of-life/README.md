@@ -4,7 +4,7 @@ This is my attempt to implement Conway's Game of Life, a cellular automaton crea
 
 Check the Wikipedia Page for more: [Game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-This implementation uses an object-oriented approach and the Tkinter and TTK widgets for creating the user interface.
+This implementation uses an object-oriented approach and with Tkinter and TTK widgets for creating a graphical user interface.
 
 ## How it works
 
@@ -26,7 +26,7 @@ To run this implementation of Conway's Game of Life, you'll need the following:
 
 1.  Clone the repository to your local machine:
 
-`git clone https://github.com/your-username/conways-game-of-life.git`
+`git clone https://github.com/jamesawo/python-projects/tree/main/conways-game-of-life`
 
 2.  Navigate to the project directory:
 

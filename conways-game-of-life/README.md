@@ -26,7 +26,7 @@ To run this implementation of Conway's Game of Life, you'll need the following:
 
 1.  Clone the repository to your local machine:
 
-`git clone https://github.com/jamesawo/python-projects/tree/main/conways-game-of-life`
+`git clone https://github.com/jamesawo/python-projects.git`
 
 2.  Navigate to the project directory:
 

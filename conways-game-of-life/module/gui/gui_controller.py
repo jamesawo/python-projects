@@ -2,6 +2,13 @@ import random
 
 
 class GuiController:
+    """ 
+        GuiController.
+
+        This class is responsible for all the Game's logic.
+
+        """
+
     def __init__(self, rows, cols, cell, root) -> None:
         self.controls = {}
         self.rows = rows
@@ -65,7 +72,7 @@ class GuiController:
 
         if is_single_step is None:
             # recursive call on update
-            self.after_id = self.root.after(500//self.speed, self._on_update)
+            self.after_id = self.root.after(1000//self.speed, self._on_update)
 
         # update generation count
         self._on_update_generation()
@@ -140,14 +147,31 @@ class GuiController:
                 x2 = x1 + self.cell
                 y2 = y1 + self.cell
 
-                # Fill alive cell with black
-                if self.board[row][col] == 1:
-                    self.controls['board_canvas'].create_rectangle(
-                        x1, y1, x2, y2, fill='black', outline='black')
-                # Fill dead cell with white
-                else:
-                    self.controls['board_canvas'].create_rectangle(
-                        x1, y1, x2, y2, fill='white', outline='black')
+                props = (x1, y1, x2, y2, row, col)
+                self._add_clickable_cell(props)
+
+    def _add_clickable_cell(self, props):
+        value = self.board[props[4]][props[5]]
+        color = self._get_cell_color(value)
+        self._add_shape_in_canvas(props, color)
+
+    def _get_cell_color(self, value):
+        return 'black' if value == 1 else 'white'
+
+    def _on_cell_click_handler(self, props):
+        value = self.board[props[4]][props[5]]
+        new_value = 1 if value == 0 else 0
+
+        color = self._get_cell_color(new_value)
+        self.board[props[4]][props[5]] = new_value
+        self._add_shape_in_canvas(props, color)
+
+    def _add_shape_in_canvas(self, props, color):
+        canvas = self.controls['board_canvas']
+        rect = canvas.create_rectangle(
+            props[0], props[1], props[2], props[3], fill=color, outline='black')
+        canvas.tag_bind(rect, "<Button-1>",
+                        lambda e: self._on_cell_click_handler(props))
 
     def _on_reset(self):
         self.board = self._create_board(self._get_zero_or_one)

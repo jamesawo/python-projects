@@ -13,8 +13,8 @@ class GuiManager:
 
     def __init__(self, root) -> None:
         # Defaults
+        self._rows = 50
         self._cols = 50
-        self._rows = 40
         self._speed = 100
         self._cell = 10
         self._iteration = 0

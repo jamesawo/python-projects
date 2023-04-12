@@ -23,6 +23,12 @@ class GuiController:
     def set_controls(self, controls):
         self.controls = controls
 
+    def set_dimensions(self, dimension):
+        self.rows = dimension[0]
+        self.cols = dimension[1]
+        self._on_stop()
+        self._on_reset()
+
     def setup(self):
         self.board = self._create_board(self._get_zero_or_one)
         self._fill_board_with_cells()

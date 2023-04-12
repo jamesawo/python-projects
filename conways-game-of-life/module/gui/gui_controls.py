@@ -3,6 +3,13 @@ from tkinter import ttk
 
 
 class GuiControls:
+    select_options = {
+        "20 x 20": (20, 20),
+        "30 x 30": (30, 30),
+        "40 x 40": (40, 40),
+        "50 x 50": (50, 50),
+    }
+
     def __init__(self, root, cell, rows, cols, controller) -> None:
         self.root = root
         self.cell = cell
@@ -99,11 +106,18 @@ class GuiControls:
         return ttk.Button(self.control_area, text=text, command=action)
 
     def create_combo(self, selected):
-        """ Helper method to create a ttk Combo"""
+        """ 
+        Helper method to create a ttk Combo
+        """
         combo = ttk.Combobox(self.control_area, textvariable=selected)
-        combo['values'] = ["20 x 20", "30 x 30",
-                           "40 x 40", "40 x 50", "50 x 60"]
+        combo['values'] = list(self.select_options.keys())
+        combo.bind("<<ComboboxSelected>>", self._on_handle_combo_selected)
         return combo
+
+    def _on_handle_combo_selected(self, event):
+        key = self.sel_size.get()
+        value = self.select_options[key]
+        self.controller.set_dimensions(value)
 
     def create_label(self, parent, title, size=14):
         """Helper method to create a ttk Label"""

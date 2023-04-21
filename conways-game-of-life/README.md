@@ -40,17 +40,17 @@ To run this implementation of Conway's Game of Life, you'll need the following:
 
 Here are some screenshots of the user interface:
 
-<img src="img/prototype.png" width=70% />
+<img src="assets/prototype.png" width=70% />
 
 ---
 
-<img src="img/game.png" width=60% />
+<img src="assets/game.png" width=60% />
 
 ## Demo
 
 Here's a GIF showing the game in action:
 
-<img src="img/demo.gif" width=70% />
+<img src="assets/demo.gif" width=70% />
 
 I hope this helps you get started with your implementation of Conway's Game of Life in Python.
 

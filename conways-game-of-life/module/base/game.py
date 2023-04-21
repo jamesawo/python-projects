@@ -18,3 +18,6 @@ class Game:
 
     def history(self) -> None:
         pass
+
+    def exit(self) -> None:
+        self.state = GameStatus.CLOSED

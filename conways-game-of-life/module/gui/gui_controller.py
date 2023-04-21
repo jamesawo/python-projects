@@ -95,7 +95,7 @@ class GuiController:
     def _get_new_cell_state(self, row, col):
         number_of_neighbors = self._get_num_of_neighbors(row, col)
 
-        # Cell is alive
+        # Rule -> Cell is alive
         if self._is_cell_alive(row, col):
 
             if number_of_neighbors < 2:

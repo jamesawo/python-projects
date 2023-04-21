@@ -9,7 +9,7 @@ class GuiManager:
         positioning, aligning and displaying of user interface elements
         like Frames, Labels, Buttons, Canvas etc.
 
-        This helps to ensure separation of concern. """
+        This ensures a clear separation of concern. """
 
     def __init__(self, root) -> None:
         # Defaults

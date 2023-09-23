@@ -3,7 +3,7 @@ import os
 def add_author_comments(directory_path, author_info):
     for root, _, files in os.walk(directory_path):
         for file_name in files:
-            if file_name.endswith('.java'):  # Only process Java files
+            if file_name.endswith('.java'):
                 file_path = os.path.join(root, file_name)
                 add_author_comment_to_file(file_path, author_info)
 

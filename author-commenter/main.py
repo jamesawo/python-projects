@@ -26,10 +26,10 @@ def add_author_comment_to_file(file_path, author_info):
 
 if __name__ == "__main__":
     directory_path = input("Enter the directory path: ")
-    author_name = input("Enter your name: ")
-    author_email = input("Enter your email: ")
-    project_date = input("Enter the date: ")
-    project_name = input("Enter the project name: ")
+    author_name = input("Enter author's name: ")
+    author_email = input("Enter author's email: ")
+    project_date = input("Enter project date: ")
+    project_name = input("Enter project name: ")
 
     author_info = {
         "name": author_name,
